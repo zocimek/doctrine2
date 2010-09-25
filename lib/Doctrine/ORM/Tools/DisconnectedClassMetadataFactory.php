@@ -46,7 +46,11 @@ class DisconnectedClassMetadataFactory extends ClassMetadataFactory
      */
     protected function newClassMetadataInstance($className)
     {
-        return new ClassMetadataInfo($className);
+        $class = new ClassMetadataInfo($className);
+        list($shortName, $namespace) = explode("\\", strrev($className), 2);
+        $class->namespace = strrev($namespace);
+        $class->table['name'] = strrev($shortName);
+        return $class;
     }
 
     /**
