@@ -177,6 +177,13 @@ class ClassMetadataInfo
     public $customRepositoryClassName;
 
     /**
+     * The name of the custom persister class used for the entity class.
+     *
+     * @var string
+     */
+    public $customPersisterClassName;
+
+    /**
      * READ-ONLY: Whether this class describes the mapping of a mapped superclass.
      *
      * @var boolean
@@ -1359,6 +1366,16 @@ class ClassMetadataInfo
     public function setCustomRepositoryClass($repositoryClassName)
     {
         $this->customRepositoryClassName = $repositoryClassName;
+    }
+
+    /**
+     * Registers a custom persister class for the entity class.
+     *
+     * @param string $persisterClassName
+     */
+    public function setCustomPersisterClass($persisterClassName)
+    {
+        $this->customPersisterClassName = $persisterClassName;
     }
 
     /**

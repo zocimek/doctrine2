@@ -55,6 +55,9 @@ class XmlDriver extends AbstractFileDriver
             $metadata->setCustomRepositoryClass(
                 isset($xmlRoot['repository-class']) ? (string)$xmlRoot['repository-class'] : null
             );
+            $metadata->setCustomPersisterClass(
+                isset($xmlRoot['persister-class']) ? (string)$xmlRoot['persister-class'] : null
+            );
         } else if ($xmlRoot->getName() == 'mapped-superclass') {
             $metadata->isMappedSuperclass = true;
         } else {

@@ -49,6 +49,9 @@ class YamlDriver extends AbstractFileDriver
             $metadata->setCustomRepositoryClass(
                 isset($element['repositoryClass']) ? $element['repositoryClass'] : null
             );
+            $metadata->setCustomPersisterClass(
+                isset($element['persisterClass']) ? $element['persisterClass'] : null
+            );
         } else if ($element['type'] == 'mappedSuperclass') {
             $metadata->isMappedSuperclass = true;
         } else {

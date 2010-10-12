@@ -2108,7 +2108,10 @@ class UnitOfWork implements PropertyChangedListener
     {
         if ( ! isset($this->persisters[$entityName])) {
             $class = $this->em->getClassMetadata($entityName);
-            if ($class->isInheritanceTypeNone()) {
+            if ($class->customPersisterClassName) {
+                $persisterClass = $class->customPersisterClassName;
+                $persister = new $persisterClass($this->em, $class);
+            } else if ($class->isInheritanceTypeNone()) {
                 $persister = new Persisters\BasicEntityPersister($this->em, $class);
             } else if ($class->isInheritanceTypeSingleTable()) {
                 $persister = new Persisters\SingleTablePersister($this->em, $class);

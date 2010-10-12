@@ -296,6 +296,9 @@ class ClassMetadata extends ClassMetadataInfo
         if ($this->customRepositoryClassName) {
             $serialized[] = 'customRepositoryClassName';
         }
+        if ($this->customPersisterClassName) {
+            $serialized[] = 'customPersisterClassName';
+        }
 
         if ($this->inheritanceType != self::INHERITANCE_TYPE_NONE) {
             $serialized[] = 'inheritanceType';

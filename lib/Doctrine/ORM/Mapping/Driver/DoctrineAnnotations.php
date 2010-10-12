@@ -27,6 +27,7 @@ use Doctrine\Common\Annotations\Annotation;
 
 final class Entity extends Annotation {
     public $repositoryClass;
+    public $persisterClass;
 }
 final class MappedSuperclass extends Annotation {}
 final class InheritanceType extends Annotation {}

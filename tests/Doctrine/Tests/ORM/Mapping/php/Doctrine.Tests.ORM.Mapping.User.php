@@ -2,6 +2,8 @@
 
 use Doctrine\ORM\Mapping\ClassMetadataInfo;
 
+$metadata->setCustomPersisterClass("Doctrine\Tests\ORM\Mapping\UserPersister");
+$metadata->setCustomRepositoryClass("Doctrine\Tests\ORM\Mapping\UserRepository");
 $metadata->setInheritanceType(ClassMetadataInfo::INHERITANCE_TYPE_NONE);
 $metadata->setPrimaryTable(array(
    'name' => 'cms_users',

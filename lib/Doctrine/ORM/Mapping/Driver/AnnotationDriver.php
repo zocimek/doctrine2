@@ -132,6 +132,7 @@ class AnnotationDriver implements Driver
         if (isset($classAnnotations['Doctrine\ORM\Mapping\Entity'])) {
             $entityAnnot = $classAnnotations['Doctrine\ORM\Mapping\Entity'];
             $metadata->setCustomRepositoryClass($entityAnnot->repositoryClass);
+            $metadata->setCustomPersisterClass($entityAnnot->persisterClass);
         } else if (isset($classAnnotations['Doctrine\ORM\Mapping\MappedSuperclass'])) {
             $metadata->isMappedSuperclass = true;
         } else {
