@@ -1976,4 +1976,16 @@ class BasicEntityPersister
         $sql = implode(' AND ', $filterClauses);
         return $sql ? "(" . $sql . ")" : ""; // Wrap again to avoid "X or Y and FilterConditionSQL"
     }
+
+    /**
+     * @return \Doctrine\ORM\Query\ResultSetMapping
+     */
+    public function getResultSetMapping()
+    {
+        if ($this->rsm === null) {
+            $this->getSelectColumnsSQL();
+        }
+
+        return $this->rsm;
+    }
 }

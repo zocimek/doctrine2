@@ -16,15 +16,17 @@
         "php": ">=5.3.2",
         "ext-pdo": "*",
         "doctrine/collections": "~1.1",
-        "doctrine/dbal": ">=2.5-dev,<2.6-dev",
+        "doctrine/dbal": ">=2.4-dev,<2.6-dev",
         "symfony/console": "2.*"
     },
     "require-dev": {
         "symfony/yaml": "2.1",
-        "satooshi/php-coveralls": "dev-master"
+        "satooshi/php-coveralls": "dev-master",
+        "twig/twig": "@stable"
     },
     "suggest": {
-        "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
+        "symfony/yaml": "If you want to use YAML Metadata Mapping Driver",
+        "twig/twig": "If you want to generate hydrators for better performance"
     },
     "autoload": {
         "psr-0": { "Doctrine\\ORM\\": "lib/" }
